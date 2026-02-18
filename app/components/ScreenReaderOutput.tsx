@@ -33,18 +33,26 @@ export function ScreenReaderOutput({
       {!item ? (
         <p className="text-sm text-white">Nothing selected.</p>
       ) : (
-        <div className="flex justify-center max-w-lg w-full">
-          <div className="flex flex-col max-w-lg  w-full">
-            {" "}
-            <button
-              type="button"
-              onClick={handleToggle}
-              className="rounded-md rounded-b-none border px-8 text-center py-2 text-base w-28 bg-[#FCA087] text-[#1C1C1C] -mb-px cursor-pointer hover:bg-[#ff8e6f] hover:text-black   focus-ring"
+        <div className="flex justify-center  w-full h-full">
+          {" "}
+          {/* <button
+            type="button"
+            onClick={handleToggle}
+            className="rounded-xl border px-5  py-2 text-base  bg-none text-[#E0E0E0] cursor-pointer hover:bg-[#d1d1d1] hover:text-black   focus-ring"
+          >
+            {isSpeaking ? "Stop" : "Listen"}
+          </button> */}
+          <div className="flex flex-col   w-full  lg:border-b-[0.3px] lg:border-r-[0.3px] lg:border-l-[0.3px] border-white/40 h-full">
+            <h2
+              id="focusables-heading"
+              className="text-xl bg-[#2B2B33] font-medium text-center mt-10 lg:mt-0 font-display border-t-[0.3px] border-b-[0.3px]  border-white/40 w-full py-4"
             >
-              {isSpeaking ? "Stop" : "Play"}
-            </button>
-            <div className="rounded-md rounded-tl-none border-[0.3px] border-white/30 p-3 bg-[#2B2B33] max-h-56">
-              <p className="mt-1 text-2xl ">{item?.info.srPreview}</p>
+              Screen reader output
+            </h2>
+            <div className="  p-3 bg-none max-h-56">
+              <p className="mt-1 text-2xl lg:text-3xl text-center">
+                {item?.info.srPreview}
+              </p>
             </div>{" "}
             <div className="flex gap-2"></div>
           </div>

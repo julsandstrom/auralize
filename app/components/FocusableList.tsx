@@ -16,20 +16,20 @@ export function FocusableList({
   }
 
   return (
-    <ol className="w-36  max-w-lg">
+    <ol className="  w-full flex flex-col items-center justify-center ">
       {items.map((item, i) => {
         const isActive = i === selectedIndex;
         return (
-          <li key={i}>
+          <li className="w-full " key={i}>
             <button
               type="button"
               aria-pressed={isActive}
               onClick={() => onSelect(i)}
               className={[
-                "w-full max-w-lg rounded px-2 py-3 mt-3 font-extralight border-[#F4F4F4]/30 border-[0.3px] text-[#F4F4F4] flex justify-center gap-2 focus-ring",
+                "w-full   font-extralight border-t-[0.3px] border-b-[0.3px] lg:border-r-[0.3px] border-white/40  text-[#F4F4F4] gap-2 focus-ring py-3",
                 "",
                 isActive
-                  ? "bg-[#F4F4F4] dark:bg-[#F4F4F4]  dark:text-[#1E1E1E] font-semibold"
+                  ? "bg-[#D7D7D7] dark:bg-[#D7D7D7]  dark:text-[#1E1E1E] text-[#1E1E1E]  font-semibold hover:bg-[#d1d1d1]"
                   : "",
               ].join(" ")}
             >

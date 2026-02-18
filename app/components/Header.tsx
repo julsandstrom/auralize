@@ -5,19 +5,23 @@ import { usePathname } from "next/navigation";
 import { isActiveRoute } from "../lib/isActiveRoute";
 import Image from "next/image";
 import { useState } from "react";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
+  const baseLink =
+    "text-white/85 hover:text-white hover:underline underline-offset-4 " +
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1C1C1C] rounded-sm";
+
   const linkClass = (href: string) =>
     isActiveRoute(pathname, href)
-      ? "font-semibold underline underline-offset-4"
-      : "text-white/80 hover:text-white hover:underline underline-offset-4";
+      ? `font-semibold underline underline-offset-4 ${baseLink}`
+      : baseLink;
 
   return (
-    // <div className="flex justify-center">
     <>
       <header className="bg-[#1C1C1C] flex flex-col items-start lg:items-center px-6 py-3 w-full lg:justify-between 2xl:px-20">
         <div className="flex w-full justify-between items-start  ">
@@ -65,46 +69,20 @@ const Header = () => {
             aria-expanded={open}
             onClick={() => setOpen(true)}
             className="lg:hidden"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="mobile-menu"
           >
             <Menu size={40} className="w-7.5 lg:hidden" />
           </button>
         </div>
       </header>
       {open && (
-        <div className="fixed inset-0 z-50 bg-[#1C1C1C] flex flex-col items-center justify-start gap-10 text-2xl w-full py-20 font-display lg:hidden">
-          <button
-            className="absolute top-6 right-6 text-white"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-          >
-            ✕
-          </button>
-          <Link
-            href="/"
-            className={linkClass("/")}
-            aria-current={isActive("/") ? "page" : undefined}
-            onClick={() => setOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className={linkClass("/about")}
-            aria-current={isActive("/about") ? "page" : undefined}
-            onClick={() => setOpen(false)}
-          >
-            About Me
-          </Link>
-
-          <Link
-            href="/auralize"
-            className={linkClass("/auralize")}
-            aria-current={isActive("/auralize") ? "page" : undefined}
-            onClick={() => setOpen(false)}
-          >
-            About Auralize
-          </Link>
-        </div>
+        <MobileNav
+          setOpen={setOpen}
+          linkClass={linkClass}
+          isActive={isActive}
+        />
       )}
     </>
   );

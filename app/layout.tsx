@@ -38,8 +38,17 @@ export default function RootLayout({
         className={`${noto.className}   antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning={true}
       >
+        {" "}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50
+             bg-white text-black px-4 py-2 rounded-md
+             focus-ring"
+        >
+          Skip to main content
+        </a>
         <Header />{" "}
-        <main className="flex-1">
+        <main className="flex-1" id="main">
           <HtmlProvider>{children}</HtmlProvider>{" "}
         </main>
         <Footer />

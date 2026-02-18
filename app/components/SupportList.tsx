@@ -10,9 +10,9 @@ const SupportList = () => {
         <li>• Common components</li>
       </ul>
 
-      <h4 className="pt-10 font-normal">
+      <p className="pt-10 font-normal">
         We&apos;ll parse tab order, accessible names, roles, states, and more.
-      </h4>
+      </p>
     </section>
   );
 };

@@ -15,6 +15,7 @@ export type FocusableInfo = {
   tag: string;
   hint: string;
   listLabel: string;
+  tagName: string;
 
   name: string;
   nameSources: NameSource[];

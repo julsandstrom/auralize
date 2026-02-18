@@ -42,20 +42,26 @@ const MainInput = () => {
           >
             <textarea
               ref={textareaRef}
+              name="html"
               id="html"
               value={html}
               onChange={(e) => setHtml(e.target.value)}
               placeholder="Paste your HTML e.g.<div> <button>Submit</button></div>"
-              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white placeholder:font-light "
+              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none"
             />
             <div className="w-full max-w-lg flex justify-end rounded-xl rounded-t-none bg-[#2B2B33]   px-4 py-3 text-white border-[0.3px] border-white/30">
               <div className="flex gap-3 items-center">
-                <span className={charCount === 0 ? "opacity-50" : ""}>
-                  words: {charCount}
+                <span
+                  aria-live="polite"
+                  className={charCount === 0 ? "opacity-50" : ""}
+                >
+                  chars: {charCount}
                 </span>
                 <button
                   type="submit"
-                  className={`${charCount === 0 ? "opacity-50" : ""} rounded-full bg-[#FCA087] text-[#2B2B33] p-2 self-end`}
+                  disabled={charCount === 0}
+                  className={`${charCount === 0 ? "opacity-50" : " cursor-pointer"} rounded-full bg-[#FCA087] text-[#242424] p-2 self-end   focus-ring hover:bg-[#ff8e6f] hover:text-black
+     disabled:cursor-not-allowed`}
                 >
                   <ArrowUp size={25} />
                   <span className="sr-only">Analyze HTML</span>
@@ -65,17 +71,18 @@ const MainInput = () => {
           </div>
         </div>{" "}
         <div className="flex justify-center">
-          <div className="flex flex-col justify-center items-start  mt-0 mx-auto ">
+          <div className="flex flex-col justify-center items-start ">
             {" "}
             <button
+              type="button"
               onClick={() => setHtml(example)}
-              className="border-[0.3px] border-white/30 rounded-xl rounded-b-none  px-6 py-2 bg-[#FCA087] font-light text-[#303030]"
+              className="border-[0.3px] border-white/30 rounded-xl rounded-b-none  px-6 py-2 bg-[#FCA087] hover:bg-[#ff8e6f] font-base text-[#242424]  focus-ring   cursor-pointer    "
             >
               Try example
             </button>
-            <div className="rounded-xl border-[0.3px] p-4 rounded-tl-none border-white/30 bg-[#2B2B33] font-light ">
-              {example}
-            </div>
+            <pre className="rounded-xl border-[0.3px] p-3 rounded-tl-none border-white/30 bg-[#2B2B33] font-light text-base   max-w-lg overflow-x-auto  focus-ring">
+              <code> {example}</code>
+            </pre>
           </div>
         </div>
       </div>

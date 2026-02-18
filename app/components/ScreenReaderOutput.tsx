@@ -39,7 +39,7 @@ export function ScreenReaderOutput({
             <button
               type="button"
               onClick={handleToggle}
-              className="rounded-md rounded-b-none border px-8 text-center py-2 text-base w-28 bg-[#FCA087] text-[#1C1C1C] -mb-px"
+              className="rounded-md rounded-b-none border px-8 text-center py-2 text-base w-28 bg-[#FCA087] text-[#1C1C1C] -mb-px cursor-pointer hover:bg-[#ff8e6f] hover:text-black   focus-ring"
             >
               {isSpeaking ? "Stop" : "Play"}
             </button>

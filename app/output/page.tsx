@@ -35,7 +35,7 @@ export default function OutputPage() {
   const selected = focusables[safeSelectedIndex] ?? null;
 
   return (
-    <main className=" dark:bg-[#1C1C1C] w-full flex justify-center lg:mt-20">
+    <main className=" dark:bg-[#1c1c1c] w-full flex justify-center lg:mt-20">
       <div className="max-w-6xl  min-h-screen lg:grid lg:grid-cols-2 justify-center md:items-start lg:gap-36  p-6">
         {viewMode === "output" && (
           <>
@@ -43,12 +43,12 @@ export default function OutputPage() {
               <ScreenReaderOutput item={selected} index={safeSelectedIndex} />
               <JsxBanner meta={meta} />
               {pageWarnings.length > 0 && (
-                <div className="lg:hidden mx-auto mt-6 w-full max-w-lg rounded-xl border border-white/30 bg-[#2B2B33] p-4 ">
-                  <div className="font-medium text-base leading-none text-white flex items-end gap-2 ">
+                <div className="lg:hidden mx-auto mt-6 w-full max-w-lg rounded-xl border border-[#F4F4F4]/30 bg-[#2B2B33] p-4 ">
+                  <span className="font-medium text-base leading-none text-[#F4F4F4] flex items-end gap-2 ">
                     <TriangleAlert size={25} className="text-[#FFD65A]" />
                     Warnings
-                  </div>
-                  <ul className="mt-2 list-disc space-y-3 pl-5 text-sm text-white font-light lg:hidden">
+                  </span>
+                  <ul className="mt-2 list-disc space-y-3 pl-5 text-sm text-[#F4F4F4] font-light lg:hidden">
                     {pageWarnings.map((w) => (
                       <li key={w}>{w}</li>
                     ))}
@@ -56,14 +56,20 @@ export default function OutputPage() {
                 </div>
               )}
 
-              <h1 className="text-xl font-medium text-center mt-10 font-display">
+              <h2
+                id="focusables-heading"
+                className="text-xl font-medium text-center mt-10 font-display"
+              >
                 Focusable elements
-              </h1>
+              </h2>
               {!html.trim() ? (
                 <p>No HTML found. Go back and paste something.</p>
               ) : (
                 <>
-                  <section className="grid gap-4 justify-center w-full">
+                  <section
+                    aria-labelledby="focusables-heading"
+                    className="grid gap-4 justify-center w-full"
+                  >
                     <FocusableList
                       items={focusables}
                       selectedIndex={safeSelectedIndex}
@@ -84,13 +90,13 @@ export default function OutputPage() {
         )}
 
         <div className="fixed  inset-x-0 bottom-10  w-full flex justify-center lg:hidden">
-          <div className="flex rounded-xl justify-between  bg-[#E4E4E4] text-[#1C1C1C] w-80 ">
+          <div className="flex rounded-xl justify-between  bg-[#F4F4F4] text-[#2B2B2B] w-80 ">
             {" "}
             <button
               onClick={() => setViewMode("output")}
               className={`h-full py-3 px-12 rounded-xl w-44  ${
                 viewMode === "output"
-                  ? "bg-[#FF7954] text-[#1C1C1C] shadow-inner font-semibold"
+                  ? "bg-[#FCA087] text-[#2B2B2B] shadow-inner font-semibold"
                   : "hover:bg-gray-200 active:bg-gray-300"
               }`}
             >
@@ -100,7 +106,7 @@ export default function OutputPage() {
               onClick={() => setViewMode("summary")}
               className={`h-full py-3 px-10 rounded-xl w-44 ${
                 viewMode === "summary"
-                  ? "bg-[#FF7954] text-[#1C1C1C] shadow-inner font-semibold"
+                  ? "bg-[#FCA087] text-[#2B2B2B] shadow-inner font-semibold"
                   : "hover:bg-gray-200 active:bg-gray-300"
               }`}
             >
@@ -108,7 +114,7 @@ export default function OutputPage() {
             </button>
           </div>
         </div>
-        {/* <pre className="whitespace-pre-wrap rounded-lg border p-3 font-mono text-xs">
+        {/* <pre className="[#F4F4F4]space-pre-wrap rounded-lg border p-3 font-mono text-xs">
             {preprocessedHtml}
           </pre> */}
         {viewMode === "summary" && (

@@ -6,9 +6,9 @@ export default function Auralize() {
       <div className="flex flex-col  gap-5 max-w-lg">
         {" "}
         <div className="flex justify-start items-enter  md:mb-3">
-          <h1 className="flex flex-col items-start text-3xl md:text-4xl font-bold font-display">
+          <h1 className=" text-3xl md:text-4xl font-bold font-display">
             Auralize{" "}
-            <span className="font-extralight text-base md:text-2xl ">
+            <span className="block font-extralight text-base md:text-2xl ">
               your website.{" "}
             </span>
           </h1>
@@ -33,7 +33,7 @@ export default function Auralize() {
       </div>
       <Link
         href="/"
-        className="bg-[#FCA087] px-6 py-2 rounded-xl text-[#1C1C1C] mt-10"
+        className="bg-[#FCA087] px-6 py-2 rounded-xl text-[#1C1C1C] mt-10 hover:bg-[#ff8e6f] hover:text-black  focus-ring"
       >
         Return Home
       </Link>

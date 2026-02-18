@@ -23,7 +23,7 @@ const Footer = () => {
       <div>
         <h5 className="font-normal mb-3 text-lg">GENERAL</h5>
         <ul className="flex flex-col gap-3 text-[#F4F4F4] text-base">
-          <li>
+          <li className=" focus-ring">
             <Link
               href="/about"
               className={linkClass("/about")}
@@ -31,14 +31,16 @@ const Footer = () => {
             >
               About Me
             </Link>
+          </li>{" "}
+          <li className=" focus-ring">
+            <Link
+              href="/auralize"
+              className={linkClass("/auralize")}
+              aria-current={isActive("/auralize") ? "page" : undefined}
+            >
+              About Auralize
+            </Link>{" "}
           </li>
-          <Link
-            href="/auralize"
-            className={linkClass("/auralize")}
-            aria-current={isActive("/auralize") ? "page" : undefined}
-          >
-            About Auralize
-          </Link>
         </ul>
       </div>
     </footer>

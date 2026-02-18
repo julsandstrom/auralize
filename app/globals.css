@@ -3,6 +3,12 @@
 :root {
   --background: #1c1c1c;
   --foreground: #f4f4f4;
+  --focus-ring: rgba(255, 255, 255, 0.85);
+  --focus-offset: #ffffff;
+}
+.dark {
+  --focus-ring: rgba(255, 255, 255, 0.75);
+  --focus-offset: #1c1c1c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +24,13 @@ body {
 }
 .font-display {
   font-family: var(--font-display), serif;
+}
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--focus-ring),
+    0 0 0 4px var(--focus-offset);
 }

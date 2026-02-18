@@ -32,6 +32,7 @@ export function describe(el: Element, root: ParentNode): FocusableInfo {
       : "";
 
   const listLabel = name ? `${tag} • "${name}"` : `${tag}`;
+  const tagName = name && `${tag}`;
 
   const id = elAny.id ? `#${elAny.id}` : "";
 
@@ -61,6 +62,7 @@ export function describe(el: Element, root: ParentNode): FocusableInfo {
     tag,
     hint: hintParts.join(" • "),
     listLabel,
+    tagName,
     name,
     nameSources: sources,
     role,

@@ -26,7 +26,7 @@ export function FocusableList({
               aria-pressed={isActive}
               onClick={() => onSelect(i)}
               className={[
-                "w-full   font-extralight  text-[#F4F4F4] gap-2 focus-ring py-3",
+                "w-full   font-extralight  text-[#F4F4F4] gap-2 focus-ring py-3 lg:text-xl",
                 "",
                 isActive
                   ? "bg-none border-2 border-[#75CE55]  dark:text-[#F4F4F4] text-[#F4F4F4]  font-semibold "

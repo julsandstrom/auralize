@@ -9,9 +9,9 @@ export function Inspector({
   index: number;
 }) {
   return (
-    <div className=" flex flex-col gap-5 border-b-[0.3px]  border-white/40 lg:h-130">
+    <div className=" flex flex-col gap-5 border-b-[0.3px]  border-white/40 lg:h-150">
       {!item ? (
-        <p className="text-sm text-zinc-600">Nothing selected.</p>
+        <p className="text-base lg:text-xl text-zinc-600">Nothing selected.</p>
       ) : (
         <>
           <h2
@@ -20,7 +20,7 @@ export function Inspector({
           >
             Details
           </h2>
-          <dl className="px-4 flex flex-col gap-3 text-sm">
+          <dl className="px-4 flex flex-col gap-3 text-base lg:text-xl">
             <div className="flex justify-start gap-4">
               <dt className="text-[#F4F4F4] font-extralight">Computed name</dt>
               <dd className="font-medium text-right">
@@ -53,7 +53,7 @@ export function Inspector({
               </dd>
             </div>
           </dl>
-          <ul className="text-base font-light grid grid-cols-[auto_1fr_auto] md:grid-cols-[auto_auto_auto] justify-between  gap-5 pl-4 pr-6 py-5">
+          <ul className="text-base font-light grid grid-cols-[auto_1fr_auto] md:grid-cols-[auto_auto_auto] justify-between  gap-5 pl-4 pr-6 py-5 lg:text-xl">
             {item.info.nameSources.map((s) => (
               <li key={s.kind} className="contents">
                 <span className="font-extralight">{s.kind}</span>{" "}
@@ -86,12 +86,12 @@ export function Inspector({
             ))}
           </ul>
           {item.info.warnings.length > 0 && (
-            <div className=" p-3 bg-none">
-              <p className="text-base leading-none font-medium flex items-end gap-2 pb-3 ">
+            <div className=" p-3 bg-none ">
+              <p className="text-base leading-none font-medium flex items-end gap-2 pb-3 lg:text-xl">
                 <TriangleAlert size={25} className="text-[#FFD65A]" />
                 Warnings
               </p>
-              <ul className="mt-1 list-disc pl-5 text-sm text-[#F4F4F4] font-light ">
+              <ul className="mt-1 list-disc pl-5 text-base lg:text-xl text-[#F4F4F4] font-light lg:text-xl">
                 {item.info.warnings.map((w, i) => (
                   <li key={i}>{w}</li>
                 ))}

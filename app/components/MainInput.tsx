@@ -38,7 +38,10 @@ const MainInput = () => {
     <form onSubmit={handleSubmit} className="w-full max-w-2xl ">
       <div className="flex flex-col items-center gap-20">
         <div className="flex flex-col w-full items-center">
-          <label className="block text-base font-semibold pb-2" htmlFor="html">
+          <label
+            className="block text-base font-semibold pb-2 lg:text-2xl"
+            htmlFor="html"
+          >
             HTML to analyze
           </label>
           <div
@@ -60,7 +63,7 @@ const MainInput = () => {
               value={html}
               onChange={(e) => setHtml(e.target.value)}
               placeholder="Paste your HTML e.g.<div> <button>Submit</button></div>"
-              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none font-mono"
+              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none font-mono lg:text-xl"
             />
             <div className="w-full max-w-lg flex justify-end rounded-xl rounded-t-none bg-[#2B2B33] px-4  py-3 text-white border-[0.3px] border-white/30">
               <div className="flex gap-3 items-center">
@@ -73,7 +76,7 @@ const MainInput = () => {
                 <button
                   type="submit"
                   disabled={charCount === 0}
-                  className={`${charCount === 0 ? "opacity-50" : " cursor-pointer"} rounded-full bg-[#75CE55] text-[#242424] p-2 self-end   focus-ring hover:bg-[#30b400] hover:text-black
+                  className={`${charCount === 0 ? "opacity-50" : " cursor-pointer"} rounded-full bg-[#75CE55] text-[#242424] p-2 lg:p-4 self-end   focus-ring hover:bg-[#30b400] hover:text-black
      disabled:cursor-not-allowed`}
                 >
                   <ArrowRight size={25} />
@@ -92,11 +95,11 @@ const MainInput = () => {
             <button
               type="button"
               onClick={() => setHtml(example)}
-              className="border-[0.3px]  border-white/30 rounded-xl rounded-b-none  px-6 py-2 bg-[#75CE55] hover:bg-[#30b400] font-base text-[#242424]  focus-ring   cursor-pointer    "
+              className="border-[0.3px]  border-white/30 rounded-xl rounded-b-none  px-6 py-2 bg-[#75CE55] hover:bg-[#30b400] font-base text-[#242424]  focus-ring   cursor-pointer   lg:text-xl "
             >
               Try example
             </button>
-            <pre className="w-full max-w-full max-h-[60vh] overflow-y-auto overflow-x-hidden whitespace-pre-wrap wrap-break-word  rounded-xl rounded-tl-none border border-white/30 bg-[#2B2B33] p-3 font-light text-base focus-ring">
+            <pre className="w-full max-w-full max-h-[60vh] overflow-y-auto overflow-x-hidden whitespace-pre-wrap wrap-break-word  rounded-xl rounded-tl-none border border-white/30 bg-[#2B2B33] p-3 font-light text-base focus-ring lg:text-xl text-white/80">
               <code className="block wrap-break-word font-mono">
                 {" "}
                 {example}

@@ -32,7 +32,7 @@ const Header = () => {
           >
             <span className="flex">
               {" "}
-              <span className="text-center   font-extralight text-base -mt-0.5 md:text-xl self-end ">
+              <span className="text-center   font-extralight text-base -mt-0.5 md:text-xl self-end lg:text-2xl">
                 Auralize
               </span>{" "}
               <Image
@@ -43,11 +43,11 @@ const Header = () => {
                 className="w-10"
               />
             </span>{" "}
-            <span className=" text-left self-start text-lg md:text-2xl -mt-1 font-display">
+            <span className=" text-left self-start text-lg md:text-3xl -mt-1 font-display">
               Hear your interface
             </span>
           </Link>{" "}
-          <nav className="gap-16 hidden lg:flex lg:items-end font-light lg:text-xl">
+          <nav className="gap-16 hidden lg:flex lg:items-end font-light lg:text-2xl">
             {" "}
             <Link
               href="/about"

@@ -63,12 +63,12 @@ export default function OutputPage() {
               <button
                 type="button"
                 onClick={handleToggle}
-                className="rounded-xl hidden lg:block border px-5  py-2 text-base  bg-[#75CE55] text-[#242424] cursor-pointer hover:bg-[#79b463] hover:text-black   focus-ring  w-32 "
+                className="rounded-xl lg:text-2xl hidden lg:block border px-5  py-2 lg:py-3 text-base  bg-[#75CE55] text-[#242424] cursor-pointer hover:bg-[#79b463] hover:text-black   focus-ring  w-32 "
               >
                 {isSpeaking ? "Stop" : "Listen"}
               </button>
             </div>
-            <div className="flex flex-col items-center w-full lg:col-start-2 lg:row-start-2 lg:h-130">
+            <div className="flex flex-col items-center w-full lg:col-start-2 lg:row-start-2 lg:h-150">
               <button
                 type="button"
                 onClick={handleToggle}
@@ -92,7 +92,7 @@ export default function OutputPage() {
                 </div>
               )} */}
             </div>
-            <div className="flex flex-col items-center w-full lg:col-start-1 lg:row-start-2 lg:h-130 max-h-150 lg:border-b-[0.3px] lg:border-white/40">
+            <div className="flex flex-col items-center w-full lg:col-start-1 lg:row-start-2 lg:h-150 max-h-150 lg:border-b-[0.3px] lg:border-white/40">
               <h2
                 id="focusables-heading"
                 className="text-xl bg-[#2B2B33] font-medium text-center mt-20 lg:mt-0 font-display border-t-[0.3px] border-b-[0.3px]  border-white/40 w-full py-4"

@@ -47,7 +47,7 @@ const Header = () => {
               Hear your interface
             </span>
           </Link>{" "}
-          <nav className="gap-16 hidden lg:flex lg:items-end font-light">
+          <nav className="gap-16 hidden lg:flex lg:items-end font-light lg:text-xl">
             {" "}
             <Link
               href="/about"

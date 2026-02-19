@@ -32,7 +32,7 @@ export default function About() {
       </div>
       <Link
         href="/"
-        className="bg-none px-6 border-[0.3px] border-[#75CE55]/50 py-2 rounded-xl text-[#E0E0E0] mt-10 hover:bg-[#75CE55] hover:text-black lg:text-xl   focus-ring"
+        className="bg-none px-6 border-[0.3px] border-[#75CE55]/50 py-2 rounded-xl text-[#E0E0E0] mt-10 hover:bg-[#75CE55] hover:text-black lg:text-xl lg:py-3   focus-ring"
       >
         Explore the project
       </Link>

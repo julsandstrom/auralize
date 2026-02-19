@@ -18,9 +18,9 @@ const Footer = () => {
     >
       <div className="border-t w-32 md:w-80 border-[#F4F4F4]/60 py-3 max-w-sm self-center"></div>
       <div>
-        <h5 className="font-normal mb-3 lg:mb-6 text-lg lg:text-2xl">
+        <h2 className="font-normal mb-3 lg:mb-6 text-lg lg:text-2xl">
           GENERAL
-        </h5>
+        </h2>
         <ul className="flex flex-col gap-3 text-[#F4F4F4] text-base lg:text-xl lg:gap-10">
           <li className=" focus-ring">
             <Link

@@ -44,7 +44,7 @@ export default function Auralize() {
       </div>
       <Link
         href="/"
-        className="bg-none px-6 border-[0.3px] border-[#75CE55]/50 py-2 rounded-xl text-[#E0E0E0] mt-10 hover:bg-[#75CE55] hover:text-black   focus-ring"
+        className="bg-none px-6 border-[0.3px] border-[#75CE55]/50 py-2 rounded-xl text-[#E0E0E0] mt-10 hover:bg-[#75CE55] hover:text-black lg:py-3   focus-ring lg:text-xl"
       >
         Explore the project
       </Link>

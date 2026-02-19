@@ -29,7 +29,7 @@ export function FocusableList({
                 "w-full   font-extralight  text-[#F4F4F4] gap-2 focus-ring py-3",
                 "",
                 isActive
-                  ? "bg-none border-1 border-[#75CE55]  dark:text-[#F4F4F4] text-[#F4F4F4]  font-semibold "
+                  ? "bg-none border-2 border-[#75CE55]  dark:text-[#F4F4F4] text-[#F4F4F4]  font-semibold "
                   : "border-t-[0.3px] border-b-[0.3px] lg:border-r-[0.3px] border-white/20 ",
               ].join(" ")}
             >

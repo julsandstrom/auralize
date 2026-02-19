@@ -20,6 +20,11 @@ export default function Auralize() {
           </h1>
         </div>
         <p className="md:text-xl text-base">
+          Auralize is a tool that simulates how screen readers interpret your
+          HTML in real time, from focus order and accessible names to roles,
+          states, and spoken output.
+        </p>
+        <p className="md:text-xl text-base">
           Around 16% of the world’s population lives with a disability, while
           more of society’s essential services continue to move online.
         </p>
@@ -41,7 +46,7 @@ export default function Auralize() {
         href="/"
         className="bg-none px-6 border-[0.3px] border-[#75CE55]/50 py-2 rounded-xl text-[#E0E0E0] mt-10 hover:bg-[#75CE55] hover:text-black   focus-ring"
       >
-        Return Home
+        Explore the project
       </Link>
     </section>
   );

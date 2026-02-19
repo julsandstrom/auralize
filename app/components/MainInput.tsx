@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 import { useHtml } from "../providers";
-import { ArrowUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const example = `<div role="region" aria-label="Filters">
@@ -76,7 +76,7 @@ const MainInput = () => {
                   className={`${charCount === 0 ? "opacity-50" : " cursor-pointer"} rounded-full bg-[#75CE55] text-[#242424] p-2 self-end   focus-ring hover:bg-[#30b400] hover:text-black
      disabled:cursor-not-allowed`}
                 >
-                  <ArrowUp size={25} />
+                  <ArrowRight size={25} />
                   <span className="sr-only">Analyze HTML</span>
                 </button>
               </div>

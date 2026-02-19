@@ -25,7 +25,7 @@ const SummaryView = ({
           Code
         </h3>
         <pre className=" w-full max-w-full max-h-60 border-b-[0.3px] lg:border-white/40 overflow-y-auto overflow-x-hidden whitespace-pre-wrap wrap-break-word    p-3 font-light text-base focus-ring">
-          <code className="font-mono">{html}</code>
+          <code className="font-mono text-white/80">{html}</code>
         </pre>
       </div>
     </div>

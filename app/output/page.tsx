@@ -55,7 +55,7 @@ export default function OutputPage() {
   return (
     <main className=" dark:bg-[#1c1c1c] w-full flex justify-center mt-10  lg:mt-20">
       {" "}
-      <div className="w-full  min-h-screen lg:grid lg:grid-cols-3 justify-center lg:items-start  lg:grid-rows-[80px_500px_auto] ">
+      <div className="w-full  min-h-screen lg:grid lg:grid-cols-3 justify-center lg:items-start  lg:grid-rows-[80px_600px_auto] ">
         {viewMode === "output" && (
           <>
             <div className="flex justify-center  lg:row-start-1 lg:col-start-2 ">
@@ -68,7 +68,7 @@ export default function OutputPage() {
                 {isSpeaking ? "Stop" : "Listen"}
               </button>
             </div>
-            <div className="flex flex-col items-center w-full lg:col-start-2 lg:row-start-2 lg:h-120">
+            <div className="flex flex-col items-center w-full lg:col-start-2 lg:row-start-2 lg:h-130">
               <button
                 type="button"
                 onClick={handleToggle}
@@ -78,8 +78,8 @@ export default function OutputPage() {
               </button>
               <ScreenReaderOutput item={selected} index={safeSelectedIndex} />
               <JsxBanner meta={meta} />
-              {pageWarnings.length > 0 && (
-                <div className="lg:hidden mx-auto mt-6 w-full max-w-lg rounded-xl border border-[#F4F4F4]/30 bg-[#2B2B33]  ">
+              {/* {pageWarnings.length > 0 && (
+                <div className="lg:hidden mx-auto p-2 mt-6 w-full max-w-lg border border-[#F4F4F4]/30 bg-[#2B2B33]  ">
                   <span className="font-medium text-base leading-none text-[#F4F4F4] flex items-end gap-2 ">
                     <TriangleAlert size={25} className="text-[#FFD65A]" />
                     Warnings
@@ -90,9 +90,9 @@ export default function OutputPage() {
                     ))}
                   </ul>
                 </div>
-              )}
+              )} */}
             </div>
-            <div className="flex flex-col items-center w-full lg:col-start-1 lg:row-start-2 lg:h-120 max-h-150 lg:border-b-[0.3px] lg:border-white/40">
+            <div className="flex flex-col items-center w-full lg:col-start-1 lg:row-start-2 lg:h-130 max-h-150 lg:border-b-[0.3px] lg:border-white/40">
               <h2
                 id="focusables-heading"
                 className="text-xl bg-[#2B2B33] font-medium text-center mt-20 lg:mt-0 font-display border-t-[0.3px] border-b-[0.3px]  border-white/40 w-full py-4"
@@ -133,7 +133,7 @@ export default function OutputPage() {
             Code
           </h3>
           <pre className=" w-full max-w-full max-h-[60vh] overflow-y-auto overflow-x-hidden whitespace-pre-wrap wrap-break-word    p-6 font-light text-base focus-ring">
-            <code className="font-mono">{html}</code>
+            <code className="font-mono text-white/80">{html}</code>
           </pre>
         </div>
 

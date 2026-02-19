@@ -41,6 +41,22 @@ export function getWarningsV1(
         `${tag === "a" ? "Link" : "Button"} has no accessible name.`,
       );
     }
+    const aria = clean(el.getAttribute("aria-label") ?? "");
+    const visible = clean(
+      (el as HTMLElement).innerText || el.textContent || "",
+    );
+
+    if (aria && visible && normalize(aria) !== normalize(visible)) {
+      warnings.push(
+        `aria-label ("${aria}") overrides visible text ("${visible}"). This is OK, but make sure both convey the same intent.`,
+      );
+    }
+
+    if (aria && visible && normalize(aria) === normalize(visible)) {
+      warnings.push(
+        `aria-label duplicates visible text. You can usually remove aria-label and keep the text.`,
+      );
+    }
     const imgs = Array.from(el.querySelectorAll("img"));
     for (const img of imgs) {
       const alt = img.getAttribute("alt");

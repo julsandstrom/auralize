@@ -8,18 +8,12 @@ export default function About() {
     >
       <div className="flex flex-col  gap-5 max-w-lg leading-relaxed font-light">
         {" "}
-        <h1
-          id="about-heading"
-          className=" text-3xl md:text-4xl font-bold font-display"
-        >
+        <h1 id="about-heading" className="text-3xl md:text-4xl  font-display">
           Hello!{" "}
-          <span className="font-light text-base md:text-2xl font-display block ">
+          <span className="font-light text-xl md:text-2xl block ">
             I&apos;m Julian.
           </span>
         </h1>
-        <p className="md:text-xl text-base font-light">
-          I started studying frontend development late 2024.{" "}
-        </p>
         <p className="md:text-xl text-base">
           I’m currently doing my internship at Sprinto, where this project
           began. Jumping into an ongoing project, navigating the accessibility
@@ -40,7 +34,7 @@ export default function About() {
         href="/"
         className="bg-none px-6 border-[0.3px] border-[#75CE55]/50 py-2 rounded-xl text-[#E0E0E0] mt-10 hover:bg-[#75CE55] hover:text-black   focus-ring"
       >
-        Return Home
+        Explore the project
       </Link>
     </section>
   );

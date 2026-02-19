@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${noto.variable} ${gilda.variable}`}>
       <body
-        className={`${noto.className}   antialiased min-h-screen flex flex-col`}
+        className={`font-[var(--font-body)] antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning={true}
       >
         {" "}

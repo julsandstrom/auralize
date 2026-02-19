@@ -9,7 +9,7 @@ export function Inspector({
   index: number;
 }) {
   return (
-    <div className=" flex flex-col gap-5 border-b-[0.3px]  border-white/40 lg:h-120">
+    <div className=" flex flex-col gap-5 border-b-[0.3px]  border-white/40 lg:h-130">
       {!item ? (
         <p className="text-sm text-zinc-600">Nothing selected.</p>
       ) : (
@@ -86,9 +86,8 @@ export function Inspector({
             ))}
           </ul>
           {item.info.warnings.length > 0 && (
-            <div className="border-[0.3px] border-[#F4F4F4]/30 p-3 bg-[#2B2B33]">
+            <div className=" p-3 bg-none">
               <p className="text-base leading-none font-medium flex items-end gap-2 pb-3 ">
-                {" "}
                 <TriangleAlert size={25} className="text-[#FFD65A]" />
                 Warnings
               </p>

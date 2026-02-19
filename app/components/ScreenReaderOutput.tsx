@@ -20,7 +20,7 @@ export function ScreenReaderOutput({
               Screen reader output
             </h2>
             <div className="  p-3 bg-none max-h-56">
-              <p className="mt-1 text-2xl lg:text-3xl text-center">
+              <p className="mt-1 text-xl lg:text-3xl text-center">
                 {item?.info.srPreview}
               </p>
             </div>{" "}

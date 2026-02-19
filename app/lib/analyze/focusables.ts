@@ -1,5 +1,7 @@
 import type { FocusableItem } from "./types";
 import { describe } from "./describe";
+import { hasHiddenAncestor } from "./visibility";
+import { isInDisabledFieldset } from "./isInsideDisabled";
 
 const SELECTOR = [
   "a[href]",
@@ -24,11 +26,18 @@ export function getFocusables(doc: Document): FocusableItem[] {
 
   const filtered = all.filter((el) => {
     if (el.hasAttribute("disabled")) return false;
-    if (el.hasAttribute("hidden")) return false;
-    if (el.getAttribute("aria-hidden") === "true") return false;
+    if (el.hasAttribute("inert")) return false;
+    if (hasHiddenAncestor(el)) return false;
+    if (isInDisabledFieldset(el)) return false;
+
+    const raw = el.getAttribute("tabindex");
+    if (raw != null) {
+      const n = Number.parseInt(raw, 10);
+      if (!Number.isFinite(n)) return false;
+    }
+
     return true;
   });
-
   const items = filtered.map((el, domIndex) => ({
     el,
     info: describe(el, doc),

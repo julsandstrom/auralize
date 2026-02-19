@@ -26,11 +26,11 @@ export function FocusableList({
               aria-pressed={isActive}
               onClick={() => onSelect(i)}
               className={[
-                "w-full   font-extralight border-t-[0.3px] border-b-[0.3px] lg:border-r-[0.3px] border-white/40  text-[#F4F4F4] gap-2 focus-ring py-3",
+                "w-full   font-extralight  text-[#F4F4F4] gap-2 focus-ring py-3",
                 "",
                 isActive
-                  ? "bg-[#D7D7D7] dark:bg-[#D7D7D7]  dark:text-[#1E1E1E] text-[#1E1E1E]  font-semibold hover:bg-[#d1d1d1]"
-                  : "",
+                  ? "bg-none border-1 border-[#75CE55]  dark:text-[#F4F4F4] text-[#F4F4F4]  font-semibold "
+                  : "border-t-[0.3px] border-b-[0.3px] lg:border-r-[0.3px] border-white/20 ",
               ].join(" ")}
             >
               <span className="shrink-0 tabular-nums"> {i + 1}. </span>

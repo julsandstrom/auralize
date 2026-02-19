@@ -1,27 +1,23 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
   return (
-    <main className="p-6 flex flex-col justify-center items-center">
-      <div className="flex flex-col  gap-5 max-w-lg leading-relaxed ">
+    <section
+      aria-labelledby="about-heading"
+      className="p-6 flex flex-col justify-center items-center"
+    >
+      <div className="flex flex-col  gap-5 max-w-lg leading-relaxed font-light">
         {" "}
-        <div className="flex justify-start items-end gap-10 md:gap-20 mb-10">
-          <h1 className=" text-3xl md:text-4xl font-bold font-display">
-            Hello!{" "}
-            <span className="font-light text-base md:text-2xl font-display block ">
-              I&apos;m Julian.
-            </span>
-          </h1>
-          <Image
-            src="/profile.png"
-            height={800}
-            width={800}
-            alt="Portrait of Julian"
-            className=" w-42.5"
-          />
-        </div>
-        <p className="md:text-xl text-base ">
+        <h1
+          id="about-heading"
+          className=" text-3xl md:text-4xl font-bold font-display"
+        >
+          Hello!{" "}
+          <span className="font-light text-base md:text-2xl font-display block ">
+            I&apos;m Julian.
+          </span>
+        </h1>
+        <p className="md:text-xl text-base font-light">
           I started studying frontend development late 2024.{" "}
         </p>
         <p className="md:text-xl text-base">
@@ -46,6 +42,6 @@ export default function About() {
       >
         Return Home
       </Link>
-    </main>
+    </section>
   );
 }

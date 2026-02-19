@@ -1,4 +1,5 @@
 import { computeDescriptionV1 } from "./description";
+import { getLandmarkInfoV1 } from "./landmark";
 import { computeAccessibleNameTraceV1 } from "./name";
 import { nvdaPreviewV1 } from "./nvdaPreview";
 import { getRoleV1, getStateTokensV1 } from "./roleState";
@@ -24,6 +25,7 @@ export function describe(el: Element, root: ParentNode): FocusableInfo {
     valueText,
     description,
   });
+  const lm = getLandmarkInfoV1(el, root);
   const elAny = el as HTMLElement;
   const tag = el.tagName.toLowerCase();
   const nameAttr =
@@ -65,6 +67,7 @@ export function describe(el: Element, root: ParentNode): FocusableInfo {
     tagName,
     name,
     nameSources: sources,
+    landmark: lm.kind === "landmark" ? { role: lm.role, name: lm.name } : null,
     role,
     stateTokens,
     srPreview,

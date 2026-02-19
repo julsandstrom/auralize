@@ -14,34 +14,45 @@ export function Inspector({
         <p className="text-sm text-zinc-600">Nothing selected.</p>
       ) : (
         <>
-          {" "}
           <h2
             id="focusables-heading"
             className="text-xl bg-[#2B2B33] font-medium text-center font-display border-t-[0.3px] border-b-[0.3px] border-white/40 w-full py-4"
           >
             Details
           </h2>
-          <div className=" bg-none px-4 lg:px-4 flex flex-col gap-3">
-            {" "}
-            <p className="text-sm">
-              <span className="text-[#F4F4F4] font-extralight">
-                Computed name:
-              </span>{" "}
-              <span className="font-medium">{item.info.name || "(none)"}</span>
-            </p>{" "}
-            <p className="text-sm">
-              <span className="text-[#F4F4F4] font-extralight">Role:</span>{" "}
-              <span className="font-medium">{item.info.role}</span>
-            </p>
-            <p className="text-sm">
-              <span className="text-[#F4F4F4] font-extralight">States:</span>{" "}
-              <span className="font-medium">
+          <dl className="px-4 flex flex-col gap-3 text-sm">
+            <div className="flex justify-start gap-4">
+              <dt className="text-[#F4F4F4] font-extralight">Computed name</dt>
+              <dd className="font-medium text-right">
+                {item.info.name || "(none)"}
+              </dd>
+            </div>
+
+            <div className="flex justify-start gap-4">
+              <dt className="text-[#F4F4F4] font-extralight">Role</dt>
+              <dd className="font-medium text-right">{item.info.role}</dd>
+            </div>
+
+            <div className="flex justify-start gap-4">
+              <dt className="text-[#F4F4F4] font-extralight">States</dt>
+              <dd className="font-medium text-right">
                 {item.info.stateTokens.length
                   ? item.info.stateTokens.join(", ")
                   : "(none)"}
-              </span>
-            </p>
-          </div>
+              </dd>
+            </div>
+
+            <div className="flex justify-start gap-4">
+              <dt className="text-[#F4F4F4] font-extralight">Context</dt>
+              <dd className="font-medium text-right">
+                {item.info.landmark
+                  ? item.info.landmark.name
+                    ? `${item.info.landmark.role} ("${item.info.landmark.name}")`
+                    : item.info.landmark.role
+                  : "none"}
+              </dd>
+            </div>
+          </dl>
           <ul className="text-base font-light grid grid-cols-[auto_1fr_auto] md:grid-cols-[auto_auto_auto] justify-between  gap-5 pl-4 pr-6 py-5">
             {item.info.nameSources.map((s) => (
               <li key={s.kind} className="contents">

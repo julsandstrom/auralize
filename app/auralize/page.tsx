@@ -2,11 +2,17 @@ import Link from "next/link";
 
 export default function Auralize() {
   return (
-    <main className="px-6 py-10 flex flex-col justify-center items-center">
-      <div className="flex flex-col  gap-5 max-w-lg">
+    <section
+      aria-labelledby="auralize-heading"
+      className="px-6 py-10 flex flex-col justify-center items-center"
+    >
+      <div className="flex flex-col  gap-5 max-w-lg font-light leading-relaxed ">
         {" "}
         <div className="flex justify-start items-enter  md:mb-3">
-          <h1 className=" text-3xl md:text-4xl font-bold font-display">
+          <h1
+            id="auralize-heading"
+            className=" text-3xl md:text-4xl font-bold font-display"
+          >
             Auralize{" "}
             <span className="block font-extralight text-base md:text-2xl ">
               your website.{" "}
@@ -37,6 +43,6 @@ export default function Auralize() {
       >
         Return Home
       </Link>
-    </main>
+    </section>
   );
 }

@@ -3,7 +3,16 @@ import { useHtml } from "../providers";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-const example = `<button aria-label="Read more about pricing">Read more</button>`;
+const example = `<div role="region" aria-label="Filters">
+  <button aria-expanded="false" aria-controls="filters-panel" aria-label="Open Filters" aria-describedby="filters-hint">
+    Filters
+  </button>
+  <p id="filters-hint">Press to show filter options.</p>
+  <div id="filters-panel" hidden>
+    <label for="price">Max price</label>
+    <input id="price" type="number" />
+  </div>
+</div>`;
 
 const MainInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -44,10 +53,14 @@ const MainInput = () => {
               ref={textareaRef}
               name="html"
               id="html"
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck={false}
+              inputMode="text"
               value={html}
               onChange={(e) => setHtml(e.target.value)}
               placeholder="Paste your HTML e.g.<div> <button>Submit</button></div>"
-              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none"
+              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none font-mono"
             />
             <div className="w-full max-w-lg flex justify-end rounded-xl rounded-t-none bg-[#2B2B33] px-4  py-3 text-white border-[0.3px] border-white/30">
               <div className="flex gap-3 items-center">
@@ -70,7 +83,7 @@ const MainInput = () => {
             </div>
           </div>
         </div>{" "}
-        <div className="flex justify-center  w-full max-w-lg ">
+        <div className="flex justify-center  w-full max-w-lg max-h-52">
           <div className="flex min-w-0  whitespace-pre-wrap break-all flex-col justify-start items-start ">
             {" "}
             <button
@@ -81,7 +94,10 @@ const MainInput = () => {
               Try example
             </button>
             <pre className="w-full max-w-full max-h-[60vh] overflow-y-auto overflow-x-hidden whitespace-pre-wrap wrap-break-word  rounded-xl rounded-tl-none border border-white/30 bg-[#2B2B33] p-3 font-light text-base focus-ring">
-              <code className="block wrap-break-word"> {example}</code>
+              <code className="block wrap-break-word font-mono">
+                {" "}
+                {example}
+              </code>
             </pre>
           </div>
         </div>

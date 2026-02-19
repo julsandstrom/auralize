@@ -5,7 +5,7 @@ import { useHtml } from "../providers";
 import { useParsedHtml } from "../lib/hooks/useParsedHtml";
 import { useFocusables } from "../lib/hooks/useFocusables";
 import { FocusableList } from "../components/FocusableList";
-import { Inspector } from "../components/Inspector";
+
 import { ScreenReaderOutput } from "../components/ScreenReaderOutput";
 import { JsxBanner } from "../components/JsxBanner";
 import { TriangleAlert } from "lucide-react";
@@ -55,10 +55,10 @@ export default function OutputPage() {
   return (
     <main className=" dark:bg-[#1c1c1c] w-full flex justify-center mt-10  lg:mt-20">
       {" "}
-      <div className="w-full  min-h-screen lg:grid lg:grid-cols-3 justify-center lg:items-start  lg:grid-rows-[100px_500px_auto] ">
+      <div className="w-full  min-h-screen lg:grid lg:grid-cols-3 justify-center lg:items-start  lg:grid-rows-[80px_500px_auto] ">
         {viewMode === "output" && (
           <>
-            <div className="flex justify-center  lg:row-start-1 lg:col-start-2 py-10 ">
+            <div className="flex justify-center  lg:row-start-1 lg:col-start-2 ">
               {" "}
               <button
                 type="button"

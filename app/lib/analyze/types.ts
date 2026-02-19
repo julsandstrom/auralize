@@ -31,11 +31,13 @@ export type FocusableInfo = {
 
   description: string;
   descriptionSources: { id: string; text: string }[];
+
+  landmark?: { role: string; name?: string } | null;
 };
 
 export type FocusableItem = {
   el: Element;
   info: FocusableInfo;
   domIndex: number;
-  tabIndex: number;
+  tabIndex: number | null;
 };

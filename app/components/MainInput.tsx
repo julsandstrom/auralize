@@ -82,6 +82,9 @@ const MainInput = () => {
               </div>
             </div>
           </div>
+          <span className="font-extralight  text-base py-1 block w-full max-w-lg text-right">
+            Built for NVDA-style output
+          </span>
         </div>{" "}
         <div className="flex justify-center  w-full max-w-lg max-h-52">
           <div className="flex min-w-0  whitespace-pre-wrap break-all flex-col justify-start items-start ">

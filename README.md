@@ -24,8 +24,7 @@ https://auralize-one.vercel.app/
 
 ## Preview
 
-_Add 1–2 screenshots or a short GIF here later._  
-(Important for recruiters.)
+![Auralize preview](public/preview.png)
 
 ---
 

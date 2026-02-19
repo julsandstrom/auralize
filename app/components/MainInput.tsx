@@ -63,7 +63,7 @@ const MainInput = () => {
               value={html}
               onChange={(e) => setHtml(e.target.value)}
               placeholder="Paste your HTML e.g.<div> <button>Submit</button></div>"
-              className="max-h-56 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none font-mono lg:text-xl"
+              className="max-h-56 lg:min-h-44 max-w-lg overflow-y-auto h-28 leading-8 w-full rounded-xl rounded-b-none border-[0.3px] border-white/30 bg-[#2B2B33] p-3 text-sm dark:bg-bg-[#2B2B33] text-white placeholder:text-white/70 placeholder:font-light focus:outline-none font-mono lg:text-xl"
             />
             <div className="w-full max-w-lg flex justify-end rounded-xl rounded-t-none bg-[#2B2B33] px-4  py-3 text-white border-[0.3px] border-white/30">
               <div className="flex gap-3 items-center">
